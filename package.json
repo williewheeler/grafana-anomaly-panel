@@ -1,0 +1,39 @@
+{
+  "name": "grafana-anomaly-panel",
+  "version": "1.0.0",
+  "description": "Grafana panel to display time series with anomalies",
+  "main": "src/module.js",
+  "scripts": {
+    "lint": "eslint --color .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "anomaly",
+    "grafana",
+    "plugin",
+    "panel"
+  ],
+  "author": "Willie Wheeler",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "~7.1.2",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-es2015-modules-systemjs": "^7.0.0-beta.3",
+    "babel-preset-es2015": "^7.0.0-beta.3",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "grunt": "~1.0.3",
+    "grunt-babel": "~8.0.0",
+    "grunt-contrib-clean": "~2.0.0",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-uglify": "~4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-execute": "~0.2.2",
+    "grunt-systemjs-builder": "^1.0.0",
+    "load-grunt-tasks": "~4.0.0"
+  },
+  "dependencies": {
+    "lodash": "~4.17.11"
+  }
+}
