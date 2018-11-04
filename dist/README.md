@@ -1,3 +1,3 @@
-# Grafana Anomaly Panel Plugin
+# Anomaly Panel Plugin
 
 TODO

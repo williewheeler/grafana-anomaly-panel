@@ -2,7 +2,9 @@ import {PanelCtrl} from 'app/plugins/sdk';
 import _ from 'lodash';
 import './css/anomaly-panel.css!';
 
-const panelDefaults = {};
+const panelDefaults = {
+  bgColor: null
+};
 
 // http://docs.grafana.org/plugins/developing/development/
 export class AnomalyCtrl extends PanelCtrl {
@@ -18,7 +20,7 @@ export class AnomalyCtrl extends PanelCtrl {
 
   // Grafana event handler: Add tabs when editing a panel
   onInitEditMode() {
-    this.addEditorTab('Options', 'public/plugins/grafana-anomaly-panel/editor.html', 2);
+    this.addEditorTab('Options', 'public/plugins/grafana-anomaly-panel/partials/editor.html', 2);
   }
 
   // Grafana event handler: Cleanup
@@ -44,9 +46,13 @@ export class AnomalyCtrl extends PanelCtrl {
   link(scope, elem) {
     this.events.on('render', () => {
       const $panelContainer = elem.find('.panel-container');
-      $panelContainer.css('background-color', '#00FF00');
+      if (this.panel.bgColor) {
+        $panelContainer.css('background-color', this.panel.bgColor);
+      } else {
+        $panelContainer.css('background-color', '');
+      }
     })
   }
 }
 
-AnomalyCtrl.templateUrl = 'module.html';
+AnomalyCtrl.templateUrl = 'partials/module.html';

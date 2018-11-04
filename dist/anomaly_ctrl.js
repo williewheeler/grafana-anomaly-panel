@@ -94,7 +94,9 @@ System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css!"], funct
       _ = _lodash.default;
     }, function (_cssAnomalyPanelCss) {}],
     execute: function () {
-      panelDefaults = {};
+      panelDefaults = {
+        bgColor: null
+      };
 
       _export("AnomalyCtrl", AnomalyCtrl = function (_PanelCtrl) {
         _inherits(AnomalyCtrl, _PanelCtrl);
@@ -121,7 +123,7 @@ System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css!"], funct
         _createClass(AnomalyCtrl, [{
           key: "onInitEditMode",
           value: function onInitEditMode() {
-            this.addEditorTab('Options', 'public/plugins/grafana-anomaly-panel/editor.html', 2);
+            this.addEditorTab('Options', 'public/plugins/grafana-anomaly-panel/partials/editor.html', 2);
           }
         }, {
           key: "onPanelTeardown",
@@ -145,9 +147,16 @@ System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css!"], funct
         }, {
           key: "link",
           value: function link(scope, elem) {
+            var _this2 = this;
+
             this.events.on('render', function () {
               var $panelContainer = elem.find('.panel-container');
-              $panelContainer.css('background-color', '#00FF00');
+
+              if (_this2.panel.bgColor) {
+                $panelContainer.css('background-color', _this2.panel.bgColor);
+              } else {
+                $panelContainer.css('background-color', '');
+              }
             });
           }
         }]);
@@ -157,7 +166,7 @@ System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css!"], funct
 
       _export("AnomalyCtrl", AnomalyCtrl);
 
-      AnomalyCtrl.templateUrl = 'module.html';
+      AnomalyCtrl.templateUrl = 'partials/module.html';
     }
   };
 });

@@ -1,0 +1,44 @@
+{
+  "type": "panel",
+  "name": "Anomaly",
+  "id": "grafana-anomaly-panel",
+  "info": {
+    "description": "Grafana anomaly panel",
+    "author": {
+      "name": "Willie Wheeler",
+      "url": "https://github.com/williewheeler/"
+    },
+    "keywords": [
+      "anomaly",
+      "panel"
+    ],
+    "logos": {
+      "small": "src/img/clock_panel_logo.svg",
+      "large": "src/img/clock_panel_logo.svg"
+    },
+    "links": [{
+        "name": "Project site",
+        "url": "https://github.com/williewheeler/grafana-anomaly-panel"
+      },
+      {
+        "name": "MIT License",
+        "url": "https://github.com/williewheeler/grafana-anomaly-panel/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [{
+        "name": "Showcase",
+        "path": "src/img/screenshot-showcase.png"
+      },
+      {
+        "name": "Options",
+        "path": "src/img/screenshot-clock-options.png"
+      }
+    ],
+    "version": "0.1.0",
+    "updated": "2018-11-04"
+  },
+  "dependencies": {
+    "grafanaVersion": "3.x.x",
+    "plugins": []
+  }
+}
