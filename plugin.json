@@ -13,11 +13,10 @@
       "panel"
     ],
     "logos": {
-      "small": "src/img/anomaly_panel_logo.svg",
-      "large": "src/img/anomaly_panel_logo.svg"
+      "small": "src/img/clock_panel_logo.svg",
+      "large": "src/img/clock_panel_logo.svg"
     },
-    "links": [
-      {
+    "links": [{
         "name": "Project site",
         "url": "https://github.com/williewheeler/grafana-anomaly-panel"
       },
@@ -26,7 +25,14 @@
         "url": "https://github.com/williewheeler/grafana-anomaly-panel/blob/master/LICENSE"
       }
     ],
-    "screenshots": [
+    "screenshots": [{
+        "name": "Showcase",
+        "path": "src/img/screenshot-showcase.png"
+      },
+      {
+        "name": "Options",
+        "path": "src/img/screenshot-clock-options.png"
+      }
     ],
     "version": "0.1.0",
     "updated": "2018-11-04"

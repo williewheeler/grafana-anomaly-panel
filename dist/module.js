@@ -1,4 +1,4 @@
-System.register([".anomaly_ctrl"], function (_export, _context) {
+System.register(["./anomaly_ctrl"], function (_export, _context) {
   "use strict";
 
   var AnomalyCtrl;

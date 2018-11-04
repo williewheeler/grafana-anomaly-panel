@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/module.js"],"names":["AnomalyCtrl"],"mappings":";;;;;;AAAQA,MAAAA,W,iBAAAA,W;;;2BAGNA,W","sourcesContent":["import {AnomalyCtrl} from '.anomaly_ctrl';\n\nexport {\n  AnomalyCtrl as PanelCtrl\n};\n"],"file":"module.js"}
+{"version":3,"sources":["../src/module.js"],"names":["AnomalyCtrl"],"mappings":";;;;;;AAAQA,MAAAA,W,iBAAAA,W;;;2BAGNA,W","sourcesContent":["import {AnomalyCtrl} from './anomaly_ctrl';\n\nexport {\n  AnomalyCtrl as PanelCtrl\n};\n"],"file":"module.js"}

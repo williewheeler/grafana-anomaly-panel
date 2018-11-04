@@ -1,20 +1,24 @@
 import {PanelCtrl} from 'app/plugins/sdk';
 import _ from 'lodash';
-import './css/anomaly-panel.css';
+import './css/anomaly-panel.css!';
 
-const panelDefaults = {
-};
+const panelDefaults = {};
 
 // http://docs.grafana.org/plugins/developing/development/
 export class AnomalyCtrl extends PanelCtrl {
+
   constructor($scope, $injector) {
     super($scope, $injector);
     _.defaultsDeep(this.panel, panelDefaults);
+
+    this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
+    this.events.on('panel-teardown', this.onPanelTeardown.bind(this));
+    this.events.on('panel-initialized', this.render.bind(this));
   }
 
   // Grafana event handler: Add tabs when editing a panel
   onInitEditMode() {
-    // TODO
+    this.addEditorTab('Options', 'public/plugins/grafana-anomaly-panel/editor.html', 2);
   }
 
   // Grafana event handler: Cleanup
@@ -44,3 +48,5 @@ export class AnomalyCtrl extends PanelCtrl {
     })
   }
 }
+
+AnomalyCtrl.templateUrl = 'module.html';

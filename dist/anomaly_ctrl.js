@@ -1,4 +1,4 @@
-System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css"], function (_export, _context) {
+System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css!"], function (_export, _context) {
   "use strict";
 
   var PanelCtrl, _, panelDefaults, AnomalyCtrl;
@@ -108,16 +108,39 @@ System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css"], functi
 
           _.defaultsDeep(_this.panel, panelDefaults);
 
+          _this.events.on('init-edit-mode', _this.onInitEditMode.bind(_this));
+
+          _this.events.on('panel-teardown', _this.onPanelTeardown.bind(_this));
+
+          _this.events.on('panel-initialized', _this.render.bind(_this));
+
           return _this;
-        }
+        } // Grafana event handler: Add tabs when editing a panel
+
 
         _createClass(AnomalyCtrl, [{
           key: "onInitEditMode",
-          value: function onInitEditMode() {// TODO
+          value: function onInitEditMode() {
+            this.addEditorTab('Options', 'public/plugins/grafana-anomaly-panel/editor.html', 2);
           }
         }, {
           key: "onPanelTeardown",
-          value: function onPanelTeardown() {// TODO
+          value: function onPanelTeardown() {} // TODO
+          // Grafana event handler: Event triggered on data refresh
+
+        }, {
+          key: "onDataReceived",
+          value: function onDataReceived() {} // TODO
+          // Grafana event handler: Event triggered to load data when in snapshot mode
+
+        }, {
+          key: "onDataSnapshotLoad",
+          value: function onDataSnapshotLoad() {} // TODO
+          // Grafana event handler: Handles errors on dashboard refresh
+
+        }, {
+          key: "onDataError",
+          value: function onDataError() {// TODO
           }
         }, {
           key: "link",
@@ -133,6 +156,8 @@ System.register(["app/plugins/sdk", "lodash", "./css/anomaly-panel.css"], functi
       }(PanelCtrl));
 
       _export("AnomalyCtrl", AnomalyCtrl);
+
+      AnomalyCtrl.templateUrl = 'module.html';
     }
   };
 });
